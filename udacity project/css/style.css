@@ -1,0 +1,465 @@
+/* 
+ * roots
+ *
+*/
+:root{
+    --txt__color:#bbb;
+    --green:#2ecc71;
+    --yellow:#f1c40f;
+    --blue:#3498db;
+    --main__color: var(--green);
+}
+/* 
+ * reset value
+ *
+*/
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    /* color: white; */
+    font-family: 'Roboto', sans-serif;
+}
+a{
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+ul{
+    list-style: none;
+}
+
+p{
+    color: var(--txt__color);
+    line-height: 1.4em;
+}
+::selection{
+    background-color: var(--main__color);
+    color: white;
+}
+/* 
+ *reapeted classes
+ *
+*/
+.container{
+    width: 80%;
+    margin: auto;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+section:not(#home){
+    padding: 20px;
+}
+.section-header{
+    padding: 15px 40px;
+    width: fit-content;
+    margin: 60px auto 120px auto;
+    color: white;
+    position: relative;
+    letter-spacing: 2px;
+    /* font-size: 2.5em; */
+}
+.section-header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main__color);
+    z-index: -1;
+    transform: rotate(-7deg);
+}
+/* 
+ * main styles
+ *
+*/
+/* Start header */
+#HOME{
+    position: relative;
+    background: url(../img/hero.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh;
+    z-index: 1;
+    color: white;
+}
+#HOME::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.7;
+    z-index: -1;
+}
+/* Start nav */
+nav{
+    padding: 1em;
+    width: 100%;
+    transition: 0.3s;
+}
+nav.active, nav.tog{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: var(--main__color);
+    z-index: 99999;
+    box-shadow: 0px 0px 20px  rgba(0, 0, 0, 0.7);
+}
+nav.up{
+    top: -100%;
+}
+nav .logo{
+    display: flex;
+    justify-content: space-between;
+}
+nav .logo #toggel{
+    display: none;
+}
+nav .nav__items{
+    width: 50%;
+}
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: bold;
+}
+nav ul a{
+    position: relative;
+}
+nav ul a::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: 0.3s;
+    width: 0%;
+    height: 3px;
+    background-color: white;
+}
+nav ul a:hover::before , nav ul li.active a::before{
+    left: 0;
+    width: 100%;
+}
+/* End nav */
+/* Start hero */
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 80%;
+    margin: auto;
+}
+.hero h4{
+    letter-spacing: 15px;
+    color: var(--main__color);
+}
+.hero h1{
+    letter-spacing: 5px;
+    font-size: 5em;
+    position: relative;
+    margin-bottom: 20px;
+    font-weight: normal;
+    text-align: center;
+}
+.hero h1::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: calc(65% - 200px);
+    height: 5px;
+    width: 200px;
+    background-color: var(--main__color);
+
+
+}
+.hero p {
+    line-height: 2em;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.hero a{
+    color: white;
+    border: 3px solid white;
+    padding: 10px 25px;
+    margin-top: 3em;
+    transition: 0.3s;
+    font-weight: bold;
+}
+.hero a:hover{
+    background-color: var(--main__color);
+    border-color: var(--main__color);
+}
+
+/* End hero */
+/* End header */
+/* Start main */
+/* Start about */
+#ABOUT  .img{
+    background: url(../img/about.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 45%;
+    height: auto;
+    position: relative;
+    outline: 5px solid rgba(256, 256, 256, 0.3);
+}
+#ABOUT  .img::before{
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    background-color: var(--main__color);
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+#ABOUT .content {
+    width: 45%;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    line-height: 2em;
+}
+#ABOUT .content h3{
+    position: relative;
+    padding-bottom: 10px;
+    letter-spacing: 1px;
+}
+#ABOUT .content h3::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 7%;
+    height: 4px;
+    background-color: var(--main__color);
+}
+#ABOUT .content ul{
+    padding-left: 10px;
+    border-left: 4px solid var(--main__color);
+    letter-spacing: 1px;
+}
+#ABOUT .content a{
+    width: fit-content;
+    color: var(--txt__color);
+    font-size: 1.3em;
+    padding: 10px 20px;
+    border: 3px solid var(--txt__color);
+    transition: 0.3s;
+    font-weight: bold;
+}
+#ABOUT .content a:hover{
+    background-color: var(--main__color);
+    border-color: var(--main__color);
+    color: white;
+}
+.what-we-do{
+    padding: 50px 0px;
+    text-align: center;
+}
+.what-we-do div{
+    width: 30%;
+}
+.what-we-do div i{
+    font-size: 3em;
+    color: var(--main__color);
+    padding: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--main__color);
+    margin-bottom: 0.7em;
+
+}
+.what-we-do div:hover i{
+    color: white;
+    background-color: var(--main__color);
+}
+/* End about */
+/* Start works */
+.work-filter{
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    margin: auto;
+    padding: 10px;
+    font-weight: bold;
+}
+.work-filter li{
+    position: relative;
+    padding: 5px;
+    margin: 0px 5px;
+}
+.work-filter li::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: 0.3s;
+    width: 0%;
+    height: 3px;
+    background-color: var(--main__color);
+}
+.work-filter li:hover::before , .work-filter li.active::before{
+    left: 0;
+    width: 100%;
+}
+.works{
+    flex-wrap: wrap;
+    
+}
+.works  div{
+    overflow: hidden;
+    transition: 0.3s;
+    width: 0%;
+    position: relative;
+}
+.works  div::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    color: var(--main__color);
+    font-size: 30px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+.works  div:hover:before{
+    content: attr(data-b);
+    width: 100%;
+    height: 100%;
+}
+.works div.active{
+    width: 25%;
+    height: 300px;
+}
+.works div img{
+    width: 100%;
+    height: inherit;
+}
+/* End works */
+/* Start contact */
+form{
+    width: 50%;
+    margin: auto;
+}
+form input , textarea{
+    width: 100%;
+    display: block;
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid var(--main__color);
+    outline: none;
+}
+input[type = 'submit']{
+    background-color: var(--main__color);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    width: fit-content;
+    padding: 10px 20px;
+    margin: auto;
+    cursor: pointer;
+}
+/* End contact */
+/* End main */
+/* footer */
+footer{
+    background-color: var(--main__color);
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+/* =============== */
+@media screen and (max-width: 991px) {
+    .flex{
+        flex-direction: column;
+    }
+    nav .flex{
+        flex-direction: column;
+    }
+    nav .nav__items{
+        width: 100%;
+        overflow: hidden;
+        height: 0px;
+        transition: 0.3s;
+    }
+    nav .nav__items ul{
+        flex-direction: column;
+
+    }
+    nav .nav__items ul li {
+        padding: 20px 0px;
+        margin: auto;
+    }
+    nav .logo #toggel{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    nav .logo #toggel span{
+        width: 40px;
+        height: 5px;
+        margin-bottom: 5px;
+        background-color: white;
+        border-radius: 10px;
+    }
+    nav.tog .nav__items{
+        height: 230px;
+    }
+    .hero{
+        margin-top: 30px;
+        text-align: center;
+    }
+    .hero h1::before{
+        height: 0;
+    }
+    #ABOUT .img{
+        height: 50vh;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+    #ABOUT .content{
+        width: 100%;
+    }
+    #ABOUT .content h3 , #ABOUT .content p , #ABOUT .content ul {
+        margin-bottom: 30px;
+    }
+    #ABOUT .content a{
+        margin: auto;
+        text-align: center;
+    }
+    .what-we-do div{
+        width: 100%;
+        margin-bottom: 50px;
+    }
+    .work-filter{
+        margin: 0;
+    }
+    .works div.active{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    form{
+        width: auto;
+    }
+}
+
+
